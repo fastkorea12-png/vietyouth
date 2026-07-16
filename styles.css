@@ -91,6 +91,43 @@ nav a:focus-visible {
   opacity: 1;
 }
 
+.language-switcher {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  background: rgba(13, 34, 27, 0.28);
+  backdrop-filter: blur(10px);
+}
+
+.language-switcher button {
+  min-width: 3.5rem;
+  min-height: 2.2rem;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 0.35rem 0.55rem;
+  color: rgba(255, 255, 255, 0.78);
+  background: transparent;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.language-switcher button:last-child {
+  border-right: 0;
+}
+
+.language-switcher button[aria-pressed="true"] {
+  color: var(--green-deep);
+  background: var(--gold-soft);
+}
+
+.language-switcher button:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: -2px;
+}
+
 .hero {
   position: relative;
   min-height: 94svh;
@@ -593,10 +630,15 @@ footer a {
 @media (max-width: 980px) {
   .site-header {
     align-items: flex-start;
+    flex-wrap: wrap;
   }
 
   nav {
     padding-top: 0.35rem;
+  }
+
+  .language-switcher {
+    margin-left: auto;
   }
 
   .intro-grid,
@@ -632,6 +674,15 @@ footer a {
     width: 100%;
     justify-content: space-between;
     font-size: 0.88rem;
+  }
+
+  .language-switcher {
+    margin-left: 0;
+  }
+
+  .language-switcher button {
+    min-width: 0;
+    padding-inline: 0.6rem;
   }
 
   .hero {

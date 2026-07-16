@@ -15,51 +15,57 @@
     />
     <meta property="og:image" content="./assets/group.png" />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="베트남 청소년 연합 수련회 후원">
+      <a class="brand" href="#top" aria-label="베트남 청소년 연합 수련회 후원" data-i18n-aria-label="brandAria">
         <span class="brand-mark">BC</span>
-        <span>청소년 연합 수련회</span>
+        <span data-i18n="brand">청소년 연합 수련회</span>
       </a>
-      <nav aria-label="주요 메뉴">
-        <a href="#purpose">목적</a>
-        <a href="#program">프로그램</a>
-        <a href="#donate">후원</a>
+      <nav aria-label="주요 메뉴" data-i18n-aria-label="navAria">
+        <a href="#purpose" data-i18n="navPurpose">목적</a>
+        <a href="#program" data-i18n="navProgram">프로그램</a>
+        <a href="#donate" data-i18n="navDonate">후원</a>
       </nav>
+      <div class="language-switcher" role="group" aria-label="언어 선택" data-i18n-aria-label="languageAria">
+        <button type="button" data-language="ko" aria-pressed="true">한국어</button>
+        <button type="button" data-language="vi" aria-pressed="false">Tiếng Việt</button>
+        <button type="button" data-language="en" aria-pressed="false">English</button>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <img src="./assets/worship.png" alt="청소년들이 함께 예배하며 기도하는 모습" />
+        <img src="./assets/worship.png" alt="청소년들이 함께 예배하며 기도하는 모습" data-i18n-alt="heroAlt" />
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <p class="eyebrow">기도와 후원으로 함께하는 다음 세대 사역</p>
-          <h1 id="hero-title">베트남 청소년<br />연합 수련회 후원</h1>
-          <p class="hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">기도와 후원으로 함께하는 다음 세대 사역</p>
+          <h1 id="hero-title" data-i18n-html="heroTitle">베트남 청소년<br />연합 수련회 후원</h1>
+          <p class="hero-copy" data-i18n="heroCopy">
             여러 교회의 청소년들이 그리스도 안에서 만나고, 예배하며, 복음 안에서 다시 서도록
             함께해 주세요.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#donate">함께 동역하기</a>
-            <a class="button ghost" href="#story">수련회 이야기 보기</a>
+            <a class="button primary" href="#donate" data-i18n="heroDonate">함께 동역하기</a>
+            <a class="button ghost" href="#story" data-i18n="heroStory">수련회 이야기 보기</a>
           </div>
         </div>
       </section>
 
       <section class="intro-section" id="story" aria-labelledby="story-title">
-        <div class="section-kicker">왜 이 수련회인가요?</div>
+        <div class="section-kicker" data-i18n="storyKicker">왜 이 수련회인가요?</div>
         <div class="intro-grid">
           <div>
-            <h2 id="story-title">믿음을 혼자 지키기 어려운 청소년들에게, 함께 예배할 공동체가 필요합니다.</h2>
+            <h2 id="story-title" data-i18n="storyTitle">믿음을 혼자 지키기 어려운 청소년들에게, 함께 예배할 공동체가 필요합니다.</h2>
           </div>
           <div class="intro-copy">
-            <p>
+            <p data-i18n="storyCopyOne">
               낯선 환경 속에서 신앙을 붙들고 살아가는 청소년들에게 수련회는 단순한 행사가 아닙니다.
               함께 웃고, 말씀을 듣고, 예배 안에서 기도하는 시간은 “나 혼자가 아니구나”라는 깊은
               격려가 됩니다.
             </p>
-            <p>
+            <p data-i18n="storyCopyTwo">
               이번 수련회는 여러 교회의 청소년들이 그리스도 안에서 하나 되어 서로를 만나고, 복음의
               능력을 다시 발견하며, 예수님과의 관계 안에서 자라가도록 돕는 자리입니다.
             </p>
@@ -67,75 +73,75 @@
         </div>
       </section>
 
-      <section class="photo-band" aria-label="수련회 현장 사진">
+      <section class="photo-band" aria-label="수련회 현장 사진" data-i18n-aria-label="photosAria">
         <figure class="photo-feature">
-          <img src="./assets/fellowship.png" alt="청소년들이 아이스브레이킹 활동을 하며 교제하는 모습" />
-          <figcaption>서먹했던 마음이 열리고, 서로의 이름을 부르기 시작하는 시간</figcaption>
+          <img src="./assets/fellowship.png" alt="청소년들이 아이스브레이킹 활동을 하며 교제하는 모습" data-i18n-alt="photoOneAlt" />
+          <figcaption data-i18n="photoOneCaption">서먹했던 마음이 열리고, 서로의 이름을 부르기 시작하는 시간</figcaption>
         </figure>
         <figure class="photo-feature tall">
-          <img src="./assets/group.png" alt="수련회에 함께한 청소년과 사역자 단체 사진" />
-          <figcaption>여러 교회가 한 공동체로 모여 다음 세대를 세웁니다</figcaption>
+          <img src="./assets/group.png" alt="수련회에 함께한 청소년과 사역자 단체 사진" data-i18n-alt="photoTwoAlt" />
+          <figcaption data-i18n="photoTwoCaption">여러 교회가 한 공동체로 모여 다음 세대를 세웁니다</figcaption>
         </figure>
         <figure class="photo-feature">
-          <img src="./assets/bible-study.png" alt="청소년들이 조별로 모여 성경공부와 나눔을 하는 모습" />
-          <figcaption>말씀을 듣고, 질문하고, 삶을 나누는 자리</figcaption>
+          <img src="./assets/bible-study.png" alt="청소년들이 조별로 모여 성경공부와 나눔을 하는 모습" data-i18n-alt="photoThreeAlt" />
+          <figcaption data-i18n="photoThreeCaption">말씀을 듣고, 질문하고, 삶을 나누는 자리</figcaption>
         </figure>
       </section>
 
       <section class="purpose-section" id="purpose" aria-labelledby="purpose-title">
         <div class="section-heading">
-          <p class="section-kicker">수련회의 목적</p>
-          <h2 id="purpose-title">청소년들이 복음 안에서 다시 서도록 돕습니다.</h2>
+          <p class="section-kicker" data-i18n="purposeKicker">수련회의 목적</p>
+          <h2 id="purpose-title" data-i18n="purposeTitle">청소년들이 복음 안에서 다시 서도록 돕습니다.</h2>
         </div>
         <div class="purpose-list">
           <article>
             <span>01</span>
-            <h3>그리스도 안에서 하나 됨</h3>
-            <p>여러 교회의 청소년들이 서로 만나고 교제하며 믿음의 친구를 얻도록 돕습니다.</p>
+            <h3 data-i18n="purposeOneTitle">그리스도 안에서 하나 됨</h3>
+            <p data-i18n="purposeOneCopy">여러 교회의 청소년들이 서로 만나고 교제하며 믿음의 친구를 얻도록 돕습니다.</p>
           </article>
           <article>
             <span>02</span>
-            <h3>복음의 능력 재발견</h3>
-            <p>예배와 성경공부를 통해 복음이 지금도 삶을 변화시키는 능력임을 듣게 합니다.</p>
+            <h3 data-i18n="purposeTwoTitle">복음의 능력 재발견</h3>
+            <p data-i18n="purposeTwoCopy">예배와 성경공부를 통해 복음이 지금도 삶을 변화시키는 능력임을 듣게 합니다.</p>
           </article>
           <article>
             <span>03</span>
-            <h3>예수님과의 관계 성장</h3>
-            <p>기도와 말씀 안에서 예수 그리스도를 인격적으로 알아가고 영적으로 자라도록 격려합니다.</p>
+            <h3 data-i18n="purposeThreeTitle">예수님과의 관계 성장</h3>
+            <p data-i18n="purposeThreeCopy">기도와 말씀 안에서 예수 그리스도를 인격적으로 알아가고 영적으로 자라도록 격려합니다.</p>
           </article>
           <article>
             <span>04</span>
-            <h3>다음 세대 리더 세움</h3>
-            <p>하나님을 섬길 다음 세대 사역자와 리더들이 일어나도록 격려합니다.</p>
+            <h3 data-i18n="purposeFourTitle">다음 세대 리더 세움</h3>
+            <p data-i18n="purposeFourCopy">하나님을 섬길 다음 세대 사역자와 리더들이 일어나도록 격려합니다.</p>
           </article>
         </div>
       </section>
 
       <section class="program-section" id="program" aria-labelledby="program-title">
         <div class="program-content">
-          <p class="section-kicker">함께할 프로그램</p>
-          <h2 id="program-title">마음이 열리고, 말씀이 들리고, 공동체가 세워지는 흐름으로 준비합니다.</h2>
+          <p class="section-kicker" data-i18n="programKicker">함께할 프로그램</p>
+          <h2 id="program-title" data-i18n="programTitle">마음이 열리고, 말씀이 들리고, 공동체가 세워지는 흐름으로 준비합니다.</h2>
         </div>
         <div class="program-grid">
           <div class="program-item">
-            <strong>아이스브레이킹 게임</strong>
-            <span>처음 만난 청소년들이 편안하게 마음을 열도록 돕습니다.</span>
+            <strong data-i18n="programOneTitle">아이스브레이킹 게임</strong>
+            <span data-i18n="programOneCopy">처음 만난 청소년들이 편안하게 마음을 열도록 돕습니다.</span>
           </div>
           <div class="program-item">
-            <strong>팀 빌딩 활동</strong>
-            <span>서로 협력하며 공동체 안에서 연결되는 경험을 만듭니다.</span>
+            <strong data-i18n="programTwoTitle">팀 빌딩 활동</strong>
+            <span data-i18n="programTwoCopy">서로 협력하며 공동체 안에서 연결되는 경험을 만듭니다.</span>
           </div>
           <div class="program-item">
-            <strong>스테이션 게임</strong>
-            <span>몸으로 참여하며 웃고 교제하는 활기 있는 시간을 갖습니다.</span>
+            <strong data-i18n="programThreeTitle">스테이션 게임</strong>
+            <span data-i18n="programThreeCopy">몸으로 참여하며 웃고 교제하는 활기 있는 시간을 갖습니다.</span>
           </div>
           <div class="program-item">
-            <strong>성경공부</strong>
-            <span>복음을 듣고 질문하며 말씀을 자신의 삶으로 가져갑니다.</span>
+            <strong data-i18n="programFourTitle">성경공부</strong>
+            <span data-i18n="programFourCopy">복음을 듣고 질문하며 말씀을 자신의 삶으로 가져갑니다.</span>
           </div>
           <div class="program-item emphasis">
-            <strong>공동예배</strong>
-            <span>함께 찬양하고 기도하며 하나님 앞에 다시 서는 시간을 가집니다.</span>
+            <strong data-i18n="programFiveTitle">공동예배</strong>
+            <span data-i18n="programFiveCopy">함께 찬양하고 기도하며 하나님 앞에 다시 서는 시간을 가집니다.</span>
           </div>
         </div>
       </section>
@@ -143,107 +149,81 @@
       <section class="donation-section" id="donate" aria-labelledby="donation-title">
         <div class="donation-panel">
           <div class="donation-copy">
-            <p class="section-kicker">후원 안내</p>
-            <h2 id="donation-title">현재 수련회 운영을 위해 약 9,000,000동(VND), 한화 약 51만 원이 필요합니다.</h2>
-            <p>
+            <p class="section-kicker" data-i18n="donationKicker">후원 안내</p>
+            <h2 id="donation-title" data-i18n="donationTitle">현재 수련회 운영을 위해 약 9,000,000동(VND), 한화 약 51만 원이 필요합니다.</h2>
+            <p data-i18n="donationCopy">
               이 재정은 청소년들의 교통비, 식비, 숙박비, 교재 및 수련회 운영에 필요한 비용으로
               사용됩니다. 크고 작은 모든 후원은 이번 수련회를 가능하게 할 뿐 아니라, 청소년들의
               삶에 오래 남을 복음의 씨앗이 됩니다.
             </p>
           </div>
 
-          <div class="need-card" aria-label="필요 재정 요약">
+          <div class="need-card" aria-label="필요 재정 요약" data-i18n-aria-label="needAria">
             <div class="need-topline">
-              <span>필요 재정</span>
+              <span data-i18n="needLabel">필요 재정</span>
               <strong>9,000,000 VND</strong>
             </div>
-            <p class="exchange-note">한화 약 510,000원 · 2026년 7월 16일 기준 (1 VND ≈ 0.0567원)</p>
+            <p class="exchange-note" data-i18n="exchangeNote">한화 약 510,000원 · 2026년 7월 16일 기준 (1 VND ≈ 0.0567원)</p>
             <div class="progress-wrap" aria-hidden="true">
               <div class="progress-bar"></div>
             </div>
-            <p>교통비 · 식비 · 숙박비 · 교재 · 운영비</p>
+            <p data-i18n="costs">교통비 · 식비 · 숙박비 · 교재 · 운영비</p>
           </div>
         </div>
 
-        <div class="giving-grid" aria-label="후원 예시">
+        <div class="giving-grid" aria-label="후원 예시" data-i18n-aria-label="givingAria">
           <article>
-            <span>3만 원</span>
-            <p>한 청소년의 식사와 이동을 돕는 후원이 될 수 있습니다.</p>
+            <span data-i18n="givingOneAmount">3만 원</span>
+            <p data-i18n="givingOneCopy">한 청소년의 식사와 이동을 돕는 후원이 될 수 있습니다.</p>
           </article>
           <article>
-            <span>5만 원</span>
-            <p>수련회 참여에 필요한 하루 비용 일부를 채우는 후원이 될 수 있습니다.</p>
+            <span data-i18n="givingTwoAmount">5만 원</span>
+            <p data-i18n="givingTwoCopy">수련회 참여에 필요한 하루 비용 일부를 채우는 후원이 될 수 있습니다.</p>
           </article>
           <article>
-            <span>10만 원</span>
-            <p>여러 청소년이 함께 말씀을 듣는 자리를 세우는 후원이 될 수 있습니다.</p>
+            <span data-i18n="givingThreeAmount">10만 원</span>
+            <p data-i18n="givingThreeCopy">여러 청소년이 함께 말씀을 듣는 자리를 세우는 후원이 될 수 있습니다.</p>
           </article>
         </div>
 
         <div class="account-card">
           <div>
-            <p class="account-label">후원 계좌</p>
+            <p class="account-label" data-i18n="accountLabel">후원 계좌</p>
             <dl>
               <div>
-                <dt>은행명</dt>
+                <dt data-i18n="bankLabel">은행명</dt>
                 <dd>국민은행</dd>
               </div>
               <div>
-                <dt>예금주</dt>
+                <dt data-i18n="holderLabel">예금주</dt>
                 <dd>김은주</dd>
               </div>
               <div>
-                <dt>계좌번호</dt>
+                <dt data-i18n="accountNumberLabel">계좌번호</dt>
                 <dd id="accountNumber">076-21-0617-806</dd>
               </div>
             </dl>
           </div>
-          <button class="copy-button" type="button" data-copy="076-21-0617-806">계좌번호 복사하기</button>
+          <button class="copy-button" type="button" data-copy="076-21-0617-806" data-i18n="copyButton">계좌번호 복사하기</button>
         </div>
       </section>
 
       <section class="prayer-section" aria-labelledby="prayer-title">
-        <p class="section-kicker">기도로도 함께해 주세요</p>
-        <h2 id="prayer-title">후원보다 먼저, 이 아이들의 마음 가운데 하나님이 일하시도록 기도해 주세요.</h2>
+        <p class="section-kicker" data-i18n="prayerKicker">기도로도 함께해 주세요</p>
+        <h2 id="prayer-title" data-i18n="prayerTitle">후원보다 먼저, 이 아이들의 마음 가운데 하나님이 일하시도록 기도해 주세요.</h2>
         <div class="prayer-list">
-          <p>청소년들이 예수 그리스도를 인격적으로 만나도록</p>
-          <p>여러 교회가 사랑 안에서 하나 되도록</p>
-          <p>필요한 재정과 섬김의 손길이 채워지도록</p>
+          <p data-i18n="prayerOne">청소년들이 예수 그리스도를 인격적으로 만나도록</p>
+          <p data-i18n="prayerTwo">여러 교회가 사랑 안에서 하나 되도록</p>
+          <p data-i18n="prayerThree">필요한 재정과 섬김의 손길이 채워지도록</p>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>청소년 연합 수련회 후원 안내</p>
-      <a href="#top">맨 위로</a>
+      <p data-i18n="footer">청소년 연합 수련회 후원 안내</p>
+      <a href="#top" data-i18n="backToTop">맨 위로</a>
     </footer>
 
-    <div class="toast" role="status" aria-live="polite">계좌번호를 복사했습니다.</div>
-
-    <script>
-      const copyButton = document.querySelector(".copy-button");
-      const toast = document.querySelector(".toast");
-
-      copyButton.addEventListener("click", async () => {
-        const account = copyButton.dataset.copy;
-        try {
-          await navigator.clipboard.writeText(account);
-        } catch {
-          const textarea = document.createElement("textarea");
-          textarea.value = account;
-          document.body.appendChild(textarea);
-          textarea.select();
-          document.execCommand("copy");
-          textarea.remove();
-        }
-
-        toast.classList.add("visible");
-        copyButton.textContent = "복사 완료";
-        setTimeout(() => {
-          toast.classList.remove("visible");
-          copyButton.textContent = "계좌번호 복사하기";
-        }, 2200);
-      });
-    </script>
+    <div class="toast" role="status" aria-live="polite" data-i18n="toastCopied">계좌번호를 복사했습니다.</div>
   </body>
 </html>
