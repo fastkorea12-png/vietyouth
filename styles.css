@@ -452,6 +452,13 @@ section {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.need-card .exchange-note {
+  margin: 0.65rem 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 .giving-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
