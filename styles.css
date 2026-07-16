@@ -732,10 +732,15 @@ dd {
 }
 
 .message-author {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: var(--green);
-  font-size: 0.86rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  margin-bottom: 0.45rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  color: var(--green-deep);
+  background: #e8f1e8;
+  font-size: 0.82rem;
   font-weight: 900;
 }
 

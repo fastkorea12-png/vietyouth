@@ -124,7 +124,8 @@ async function loadPrayerMessages() {
     const data = JSON.parse(text.slice(text.indexOf("{") , text.lastIndexOf("}") + 1));
     const messages = data.table.rows.map((row) => row.c?.[1]?.v).filter(Boolean).slice(-12).reverse();
     prayerMessages.replaceChildren(...messages.map((message) => {
-      const [author, body] = message.includes("|||") ? message.split("|||") : ["기도의 동역자", message];
+      const fallbackIndex = [...message].reduce((total, character) => total + character.charCodeAt(0), 0) % encouragementNames.length;
+      const [author, body] = message.includes("|||") ? message.split("|||") : [encouragementNames[fallbackIndex], message];
       const item = document.createElement("p");
       item.className = "message-item";
       const authorElement = document.createElement("span");
