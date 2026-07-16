@@ -666,6 +666,7 @@ dd {
   font-weight: 800;
 }
 
+.prayer-form input,
 .prayer-form textarea {
   min-height: 165px;
   resize: vertical;
@@ -679,6 +680,11 @@ dd {
   transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
+.prayer-form input {
+  min-height: 3rem;
+}
+
+.prayer-form input:focus,
 .prayer-form textarea:focus {
   border-color: var(--green);
   outline: 0;
@@ -723,6 +729,14 @@ dd {
   background: var(--white);
   box-shadow: 0 7px 16px rgba(23, 50, 41, 0.05);
   white-space: pre-wrap;
+}
+
+.message-author {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--green);
+  font-size: 0.86rem;
+  font-weight: 900;
 }
 
 .message-empty {

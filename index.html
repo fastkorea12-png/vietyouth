@@ -228,6 +228,8 @@
           <div class="message-panel">
             <h3 data-i18n="messageFormTitle">기도·응원 남기기</h3>
             <form class="prayer-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdNOraySfwPuaoHr01MH1cV1Eys_qmK4MoEQjKRxlRrFqesrg/formResponse" method="post" target="prayerSubmitFrame">
+              <label for="prayerName" data-i18n="messageNameLabel">이름 또는 별칭 (선택)</label>
+              <input id="prayerName" name="prayerName" type="text" maxlength="30" data-i18n-placeholder="messageNamePlaceholder" placeholder="비워 두면 따뜻한 별칭이 자동으로 붙어요.">
               <label for="prayerMessage" data-i18n="messageInputLabel">수련회를 위한 기도 또는 응원 글을 남겨 주세요.</label>
               <textarea id="prayerMessage" name="entry.80458839" required data-i18n-placeholder="messagePlaceholder" placeholder="따뜻한 기도와 응원의 마음을 적어 주세요."></textarea>
               <button type="submit" class="message-submit" data-i18n="messageSubmit">글 남기기</button>

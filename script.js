@@ -28,10 +28,23 @@ const translations = {
 const copyButton = document.querySelector(".copy-button");
 const toast = document.querySelector(".toast");
 const prayerForm = document.querySelector(".prayer-form");
+const prayerName = document.querySelector("#prayerName");
 const prayerMessage = document.querySelector("#prayerMessage");
 const prayerStatus = document.querySelector(".message-status");
 const prayerMessages = document.querySelector("#prayerMessages");
 let activeLanguage = "ko";
+const encouragementNames = [
+  "은혜받은 베드로", "용기있는 다윗", "기도하는 한나", "소망의 요셉", "믿음의 에스더",
+  "사랑의 요한", "기쁨의 바울", "평안의 루디아", "감사의 마리아", "순종의 노아",
+  "담대한 여호수아", "온유한 모세", "빛나는 디모데", "충성된 다니엘", "새벽의 사무엘",
+  "따뜻한 바나바", "복음의 빌립", "찬양하는 미리암", "눈물의 느헤미야", "진실한 룻",
+  "기대하는 엘리야", "지혜로운 솔로몬", "은혜의 드보라", "회복의 나오미", "기쁨의 삭개오",
+  "새힘의 이사야", "소망의 예레미야", "감동의 디도", "용서의 스데반", "사랑받는 야고보",
+  "평화를 만드는 마태", "믿음의 마르다", "은총의 엘리사벳", "기다림의 시므온", "헌신의 브리스길라",
+  "좋은 소식의 안드레", "찬란한 아볼로", "겸손한 기드온", "굳건한 갈렙", "새노래의 아삽",
+  "기도의 안나", "감사하는 도르가", "빛의 바디매오", "사랑의 빌레몬", "은혜로운 버가",
+  "희망의 오벳", "힘찬 요나단", "순례자 아브라함", "회복의 욥", "축복의 사라"
+];
 const koreanText = {
   title: document.title,
   description: document.querySelector('meta[name="description"]').content,
@@ -111,9 +124,13 @@ async function loadPrayerMessages() {
     const data = JSON.parse(text.slice(text.indexOf("{") , text.lastIndexOf("}") + 1));
     const messages = data.table.rows.map((row) => row.c?.[1]?.v).filter(Boolean).slice(-12).reverse();
     prayerMessages.replaceChildren(...messages.map((message) => {
+      const [author, body] = message.includes("|||") ? message.split("|||") : ["기도의 동역자", message];
       const item = document.createElement("p");
       item.className = "message-item";
-      item.textContent = message;
+      const authorElement = document.createElement("span");
+      authorElement.className = "message-author";
+      authorElement.textContent = author;
+      item.append(authorElement, document.createTextNode(body));
       return item;
     }));
     if (!messages.length) prayerMessages.innerHTML = '<p class="message-empty">첫 기도와 응원을 남겨 주세요.</p>';
@@ -123,8 +140,11 @@ async function loadPrayerMessages() {
 }
 
 prayerForm.addEventListener("submit", () => {
+  const author = prayerName.value.trim() || encouragementNames[Math.floor(Math.random() * encouragementNames.length)];
+  prayerMessage.value = `${author}|||${prayerMessage.value.trim()}`;
   prayerStatus.textContent = "글을 남겼습니다. 잠시 후 함께 모인 기도에 표시됩니다.";
   setTimeout(() => {
+    prayerName.value = "";
     prayerMessage.value = "";
     loadPrayerMessages();
   }, 1500);
