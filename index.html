@@ -217,6 +217,30 @@
           <p data-i18n="prayerThree">필요한 재정과 섬김의 손길이 채워지도록</p>
         </div>
       </section>
+
+      <section class="message-section" aria-labelledby="message-title">
+        <div class="section-heading">
+          <p class="section-kicker" data-i18n="messageKicker">함께 남기는 기도와 응원</p>
+          <h2 id="message-title" data-i18n="messageTitle">기도와 응원을 남기고, 함께 읽어 주세요.</h2>
+          <p class="message-copy" data-i18n="messageCopy">남겨 주신 글은 수련회를 향한 마음을 모으는 기도가 됩니다. 서로를 격려하는 글을 함께 나눠 주세요.</p>
+        </div>
+        <div class="message-grid">
+          <div class="message-panel">
+            <h3 data-i18n="messageFormTitle">기도·응원 남기기</h3>
+            <form class="prayer-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdNOraySfwPuaoHr01MH1cV1Eys_qmK4MoEQjKRxlRrFqesrg/formResponse" method="post" target="prayerSubmitFrame">
+              <label for="prayerMessage" data-i18n="messageInputLabel">수련회를 위한 기도 또는 응원 글을 남겨 주세요.</label>
+              <textarea id="prayerMessage" name="entry.80458839" required data-i18n-placeholder="messagePlaceholder" placeholder="따뜻한 기도와 응원의 마음을 적어 주세요."></textarea>
+              <button type="submit" class="message-submit" data-i18n="messageSubmit">글 남기기</button>
+              <p class="message-status" aria-live="polite"></p>
+            </form>
+            <iframe class="submit-frame" name="prayerSubmitFrame" title="기도글 제출" hidden></iframe>
+          </div>
+          <div class="message-panel">
+            <h3 data-i18n="messageWallTitle">함께 모인 기도</h3>
+            <div class="prayer-wall" id="prayerMessages" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
