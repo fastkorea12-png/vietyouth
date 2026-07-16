@@ -28,6 +28,15 @@ const translations = {
 const copyButton = document.querySelector(".copy-button");
 const toast = document.querySelector(".toast");
 let activeLanguage = "ko";
+const koreanText = {
+  title: document.title,
+  description: document.querySelector('meta[name="description"]').content,
+  ogTitle: document.querySelector('meta[property="og:title"]').content,
+  text: new Map([...document.querySelectorAll("[data-i18n]")].map((element) => [element, element.textContent])),
+  html: new Map([...document.querySelectorAll("[data-i18n-html]")].map((element) => [element, element.innerHTML])),
+  alt: new Map([...document.querySelectorAll("[data-i18n-alt]")].map((element) => [element, element.alt])),
+  aria: new Map([...document.querySelectorAll("[data-i18n-aria-label]")].map((element) => [element, element.getAttribute("aria-label")]))
+};
 
 function deviceLanguage() {
   const languages = navigator.languages || [navigator.language || "en"];
@@ -38,22 +47,27 @@ function deviceLanguage() {
 function setLanguage(language, save = true) {
   activeLanguage = translations[language] ? language : "en";
   const dictionary = translations[activeLanguage];
+  const korean = activeLanguage === "ko";
   document.documentElement.lang = activeLanguage;
   document.querySelectorAll("[data-i18n]").forEach((element) => {
-    if (dictionary[element.dataset.i18n]) element.textContent = dictionary[element.dataset.i18n];
+    const value = korean ? koreanText.text.get(element) : dictionary[element.dataset.i18n];
+    if (value) element.textContent = value;
   });
   document.querySelectorAll("[data-i18n-html]").forEach((element) => {
-    if (dictionary[element.dataset.i18nHtml]) element.innerHTML = dictionary[element.dataset.i18nHtml];
+    const value = korean ? koreanText.html.get(element) : dictionary[element.dataset.i18nHtml];
+    if (value) element.innerHTML = value;
   });
   document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
-    if (dictionary[element.dataset.i18nAlt]) element.alt = dictionary[element.dataset.i18nAlt];
+    const value = korean ? koreanText.alt.get(element) : dictionary[element.dataset.i18nAlt];
+    if (value) element.alt = value;
   });
   document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
-    if (dictionary[element.dataset.i18nAriaLabel]) element.setAttribute("aria-label", dictionary[element.dataset.i18nAriaLabel]);
+    const value = korean ? koreanText.aria.get(element) : dictionary[element.dataset.i18nAriaLabel];
+    if (value) element.setAttribute("aria-label", value);
   });
-  document.title = dictionary.title || "베트남 청소년 연합 수련회 후원";
-  document.querySelector('meta[name="description"]').content = dictionary.description || "여러 교회의 청소년들이 그리스도 안에서 만나고 예배하며 복음 안에서 다시 서도록 함께해 주세요.";
-  document.querySelector('meta[property="og:title"]').content = document.title;
+  document.title = korean ? koreanText.title : dictionary.title;
+  document.querySelector('meta[name="description"]').content = korean ? koreanText.description : dictionary.description;
+  document.querySelector('meta[property="og:title"]').content = korean ? koreanText.ogTitle : document.title;
   document.querySelectorAll("[data-language]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.language === activeLanguage)));
   if (save) localStorage.setItem("vietyouth-language", activeLanguage);
 }
