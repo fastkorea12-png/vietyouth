@@ -131,7 +131,10 @@ async function loadPrayerMessages() {
       const authorElement = document.createElement("span");
       authorElement.className = "message-author";
       authorElement.textContent = author;
-      item.append(authorElement, document.createTextNode(body));
+      const bodyElement = document.createElement("span");
+      bodyElement.className = "message-body";
+      bodyElement.textContent = body;
+      item.append(authorElement, bodyElement);
       return item;
     }));
     if (!messages.length) prayerMessages.innerHTML = '<p class="message-empty">첫 기도와 응원을 남겨 주세요.</p>';

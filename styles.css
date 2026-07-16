@@ -744,6 +744,12 @@ dd {
   font-weight: 900;
 }
 
+.message-body {
+  display: block;
+  margin-top: 0.65rem;
+  line-height: 1.7;
+}
+
 .message-empty {
   margin: 0;
   color: var(--muted);
